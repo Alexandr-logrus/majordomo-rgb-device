@@ -1,2 +1,2 @@
 # majordomo-dimmer-device
-Simple Devices addon (philips.light.downlight)
+Simple Devices addon (Xiaomi Gateway)
