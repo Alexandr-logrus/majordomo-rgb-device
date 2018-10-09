@@ -3,7 +3,7 @@
 $this->device_types['rgb'] = array(
     'TITLE'=>"XiGateway",
     'PARENT_CLASS'=>'SControllers',
-    'CLASS'=>'SXiGatRGB',
+    'CLASS'=>'SXiGatewayRGB',
     'PROPERTIES'=>array(
         'color'=>array('DESCRIPTION'=>'Current color','ONCHANGE'=>'colorUpdated','DATA_KEY'=>1),
         'colorSaved'=>array('DESCRIPTION'=>'Saved color'),
