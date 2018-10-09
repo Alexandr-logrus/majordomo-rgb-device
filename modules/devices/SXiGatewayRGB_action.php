@@ -1,7 +1,9 @@
+<?php
+
 $ot = $this->object_title;
 
 if (isset($params['color'])) {
- callMethod($ot . '.setColor', array('color'=> $params['color']));
+ $this->callMethod('setColor', array('color'=> $params['color']));
  if (isset($params['timer'])) {
   setTimeout($ot . '_timerAction', 'callMethod("' . $ot . '.action");', $params['timer']);
  }
@@ -10,14 +12,14 @@ if (isset($params['color'])) {
  $check = 0;
  $color = '000000';
  if ($this->getProperty('color') != $color) {
-  callMethod($ot . '.setColor', array('color'=> $color));
+  $this->callMethod('setColor', array('color'=> $color));
   $check = 1;
  }
 } elseif (getGlobal('NobodyHomeMode.active') == 2) { //Все спят
  $check = 0;
  $color = 'cd00ff';
  if ($this->getProperty('color') != $color) {
-  callMethod($ot . '.setColor', array('color'=> $color));
+  $this->callMethod('setColor', array('color'=> $color));
   $check = 1;
  }
  if ($this->getProperty('brightness') != 5) {
@@ -42,7 +44,7 @@ if (isset($params['color'])) {
   }
  }
  if ($this->getProperty('color') != $color) {
-  callMethod($ot . '.setColor', array('color'=> $color));
+  $this->callMethod('setColor', array('color'=> $color));
   $check = 1;
  }
  if (getGlobal('DarknessMode.active')) {
