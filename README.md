@@ -9,6 +9,9 @@ callMethod('ОБЪЕКТ.action');
 * класса OperationalModes, метода modeChanged на уровне объекта NobodyHomeMode
 callMethod('ОБЪЕКТ.action');
 
+* класса OperationalModes, метода modeChanged на уровне объекта DarknessMode
+callMethod('ОБЪЕКТ.action');
+
 * вызов по требованию
 
 callMethod('ОБЪЕКТ.action'); //без параметров
