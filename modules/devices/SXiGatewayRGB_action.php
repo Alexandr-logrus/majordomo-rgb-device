@@ -1,6 +1,8 @@
 <?php
 
 $ot = $this->object_title;
+//$ot = $params['ORIGINAL_OBJECT_TITLE'];
+$action = $this->getProperty('actionRGB');
 
 if (isset($params['color'])) {
  $this->callMethod('setColor', array('color'=> $params['color']));
@@ -8,14 +10,14 @@ if (isset($params['color'])) {
   setTimeout($ot . '_timerAction', 'callMethod("' . $ot . '.action");', $params['timer']);
  }
  return;
-} elseif (getGlobal('NobodyHomeMode.active') == 1) { //Никого нет дома
+} elseif (getGlobal('NobodyHomeMode.active') == 1 && $action) { //Никого нет дома
  $check = 0;
  $color = '000000';
  if ($this->getProperty('color') != $color) {
   $this->callMethod('setColor', array('color'=> $color));
   $check = 1;
  }
-} elseif (getGlobal('NobodyHomeMode.active') == 2) { //Все спят
+} elseif (getGlobal('NobodyHomeMode.active') == 2 && $action) { //Все спят
  $check = 0;
  $color = 'cd00ff';
  if ($this->getProperty('color') != $color) {
@@ -26,7 +28,7 @@ if (isset($params['color'])) {
   $this->setProperty('brightness', 5);
   $check = 1;
  }
-} else { //Кто-то дома
+} elseif (getGlobal('NobodyHomeMode.active') == 0 && $action) { //Кто-то дома
  $check = 0;
  $color = '00ff00';
  $redFound = 0;
@@ -56,8 +58,11 @@ if (isset($params['color'])) {
   $this->setProperty('brightness', $brightness);
   $check = 1;
  }
+} else {
+ $this->callMethod('turnOff');
 }
 
+
 if ($check) {
- setTimeout($ot . '_Action', 'callMethod("' . $ot . '.action");', 5);
+ setTimeout($ot . '_timerCheck', 'callMethod("' . $ot . '.action");', 5);
 }
