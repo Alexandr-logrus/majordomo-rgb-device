@@ -1,6 +1,6 @@
 <?php
 
-$this->device_types['rgb'] = array(
+$this->device_types['rgbgt'] = array(
     'TITLE'=>"XiGateway",
     'PARENT_CLASS'=>'SControllers',
     'CLASS'=>'SXiGatewayRGB',
