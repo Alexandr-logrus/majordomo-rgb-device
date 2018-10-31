@@ -1,7 +1,7 @@
 <?php
 
-$ot = $this->object_title;
-//$ot = $params['ORIGINAL_OBJECT_TITLE'];
+//$ot = $this->object_title;
+$ot = $params['ORIGINAL_OBJECT_TITLE'];
 $action = $this->getProperty('actionRGB');
 
 if (isset($params['color'])) {
