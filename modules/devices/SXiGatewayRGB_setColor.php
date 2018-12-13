@@ -1,23 +1,7 @@
 <?php
 
-if (!$params['color']) return;
+if (isset($params['color']) == 0) return;
 
 $color = strtolower($params['color']);
 $color = preg_replace('/^#/','',$color);
-/*
-$transform = array(
- 'red'=>'ff0000',
- 'green'=>'00ff00',
- 'blue'=>'0000ff',
- 'white'=>'ffffff'
-);
-
-if (isset($transform[$color])) {
- $color = $transform[$color];
-}
-*/
-if ($color == '000000') {
- $this->callMethod('turnOff');
-} else {
- $this->setProperty('color', $color);
-}
+$this->setProperty('color', $color);

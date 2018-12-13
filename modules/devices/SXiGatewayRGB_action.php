@@ -1,6 +1,5 @@
 <?php
 
-//$ot = $this->object_title;
 $ot = $params['ORIGINAL_OBJECT_TITLE'];
 $action = $this->getProperty('actionRGB');
 
@@ -14,14 +13,14 @@ if (isset($params['color'])) {
  $check = 0;
  $color = '000000';
  if ($this->getProperty('color') != $color) {
-  $this->callMethod('setColor', array('color'=> $color));
+  $this->setProperty('color', $color);
   $check = 1;
  }
 } elseif (getGlobal('NobodyHomeMode.active') == 2 && $action) { //Все спят
  $check = 0;
  $color = 'cd00ff';
  if ($this->getProperty('color') != $color) {
-  $this->callMethod('setColor', array('color'=> $color));
+  $this->setProperty('color', $color);
   $check = 1;
  }
  if ($this->getProperty('brightness') != 5) {
@@ -46,7 +45,7 @@ if (isset($params['color'])) {
   }
  }
  if ($this->getProperty('color') != $color) {
-  $this->callMethod('setColor', array('color'=> $color));
+  $this->setProperty('color', $color);
   $check = 1;
  }
  if (getGlobal('DarknessMode.active')) {
@@ -59,9 +58,8 @@ if (isset($params['color'])) {
   $check = 1;
  }
 } else {
- $this->callMethod('turnOff');
+ $this->setProperty('color', '000000');
 }
-
 
 if ($check) {
  setTimeout($ot . '_timerCheck', 'callMethod("' . $ot . '.action");', 5);
