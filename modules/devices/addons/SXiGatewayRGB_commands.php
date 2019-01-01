@@ -13,7 +13,7 @@ if ($device_type == 'rgbgt') {
   $opposite_code .= "callMethodSafe('$linked_object.turnOn');";
   $processed = 1;
   //$reply_confirm = 1;
- } elseif (preg_match('/(.*)' . LANG_COLOR . '(.*)/uis', $command, $matches)) {
+ } elseif (preg_match('/' . LANG_COLOR . '/uis', $command)) {
   $colors = array(
    'ffffff' => array('белый', 'белой', 'белым', 'белом'),
    'ff0000' => array('красный', 'красной', 'красным', 'красном'),
@@ -22,7 +22,7 @@ if ($device_type == 'rgbgt') {
   );
   foreach($colors as $color_code => $color_words) {
    foreach($color_words as $color_word) {
-    if(preg_match('/' . $color_word . '/uis', $matches[0])) {
+    if(preg_match('/' . $color_word . '/uis', $command)) {
 	 $run_code .= "callMethodSafe('$linked_object.setColor', array('color'=> '$color_code'));";
      $processed = 1;
      $reply_confirm = 1;
