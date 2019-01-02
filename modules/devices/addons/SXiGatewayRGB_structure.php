@@ -1,7 +1,7 @@
 <?php
 
 $this->device_types['rgbgt'] = array(
-    'TITLE'=>"XiGateway",
+    'TITLE'=>'XiGateway',
     'PARENT_CLASS'=>'SControllers',
     'CLASS'=>'SXiGatewayRGB',
     'PROPERTIES'=>array(
@@ -25,3 +25,6 @@ $this->device_types['rgbgt'] = array(
             'DarknessMode.modeChanged'=>'SXiGatewayRGB_injects')
     )
 );
+
+@include_once(ROOT . 'languages/SXiGatewayRGB_' . SETTINGS_SITE_LANGUAGE . '.php');
+@include_once(ROOT . 'languages/SXiGatewayRGB_default' . '.php');
