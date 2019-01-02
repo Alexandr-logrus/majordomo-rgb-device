@@ -13,24 +13,29 @@ if ($device_type == 'rgbgt') {
   $opposite_code .= "callMethodSafe('$linked_object.turnOn');";
   $processed = 1;
   //$reply_confirm = 1;
- } elseif (preg_match('/' . LANG_COLOR . '/uis', $command)) {
+ } elseif (preg_match('/' . LANG_SXiGatewayRGB_PATTERN_COLOR . '/uis', $command)) {
   $colors = array(
-   'ffffff' => array('white', 'бела', 'беле', 'бело', 'белу', 'белы'),
-   'ff0000' => array('red', 'красна', 'красне', 'красно', 'красну', 'красны'),
-   '00ff00' => array('green', 'зелена', 'зелене', 'зелено', 'зелену', 'зелены', 'зелёны'),
-   '0000ff' => array('blue', 'сине', 'сини', 'синю', 'синя'),
+   'ffffff' => LANG_SXiGatewayRGB_PATTERN_WHITE,
+   'ff00ff' => LANG_SXiGatewayRGB_PATTERN_MAGENTA,
+   '9400d3' => LANG_SXiGatewayRGB_PATTERN_VIOLET,
+   '4b0082' => LANG_SXiGatewayRGB_PATTERN_INDIGO,
+   '0000ff' => LANG_SXiGatewayRGB_PATTERN_BLUE,
+   '00ffff' => LANG_SXiGatewayRGB_PATTERN_CYAN,
+   '00ff00' => LANG_SXiGatewayRGB_PATTERN_GREEN,
+   'ffff00' => LANG_SXiGatewayRGB_PATTERN_YELLOW,
+   'ff7f00' => LANG_SXiGatewayRGB_PATTERN_ORANGE,
+   'ff0000' => LANG_SXiGatewayRGB_PATTERN_RED
   );
   foreach($colors as $color_code => $color_words) {
-   foreach($color_words as $color_word) {
-    if(preg_match('/' . preg_quote($color_word, '/') . '/uis', $command)) {
-	 $run_code .= "callMethodSafe('$linked_object.setColor', array('color'=> '$color_code'));";
-     $processed = 1;
-     $reply_confirm = 1;
-	 break 2;
-	}
+   if(preg_match('/' . $color_words . '/uis', $command)) {
+    //$run_code .= "setGlobal('$linked_object.color', $color_code);";
+    $run_code .= "callMethodSafe('$linked_object.setColor', array('color'=> '$color_code'));";
+    $processed = 1;
+    $reply_confirm = 1;
+    break;
    }
   }
- } elseif (preg_match('/яркость|brightness/uis', $command)) {
+ } elseif (preg_match('/' . LANG_SXiGatewayRGB_PATTERN_BRIGHTNESS . '/uis', $command)) {
   if(preg_match('/(?:\s)(\d{1,2}|100)(?:%|\s|$)/uis', $command, $matches)) {
    $run_code .= "setGlobal('$linked_object.brightness', $matches[1]);";
    $processed = 1;
