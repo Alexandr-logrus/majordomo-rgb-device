@@ -1,4 +1,4 @@
-# majordomo-dimmer-device
+# majordomo-rgb-device
 Simple Devices addon (Xiaomi Gateway RGB)
 
 
