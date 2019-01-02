@@ -5,16 +5,16 @@ $dictionary = array(
  'SXiGatewayRGB_PATTERN_BRIGHTNESS' => 'яркость',
  'SXiGatewayRGB_PATTERN_COLOR' => 'цвет|свет',
 
- 'SXiGatewayRGB_PATTERN_WHITE' => 'бела|беле|бело|белу|белы',
- 'SXiGatewayRGB_PATTERN_MAGENTA' => 'перламутровы',
- 'SXiGatewayRGB_PATTERN_VIOLET' => 'фиолетовы',
+ 'SXiGatewayRGB_PATTERN_WHITE' => 'бел|белый',
+ 'SXiGatewayRGB_PATTERN_MAGENTA' => 'перламутр|перламутровый',
+ 'SXiGatewayRGB_PATTERN_VIOLET' => 'фиолет|фиолетовый',
  'SXiGatewayRGB_PATTERN_INDIGO' => 'индиго',
- 'SXiGatewayRGB_PATTERN_BLUE' => 'сине|сини|синю|синя',
- 'SXiGatewayRGB_PATTERN_CYAN' => 'голубо',
- 'SXiGatewayRGB_PATTERN_GREEN' => 'зеленый|зелёный',
- 'SXiGatewayRGB_PATTERN_YELLOW' => 'желты|жёлты',
- 'SXiGatewayRGB_PATTERN_ORANGE' => 'оранжевы',
- 'SXiGatewayRGB_PATTERN_RED' => 'красна|красне|красно|красну|красны'
+ 'SXiGatewayRGB_PATTERN_BLUE' => 'син|синий',
+ 'SXiGatewayRGB_PATTERN_CYAN' => 'голуб|голубой',
+ 'SXiGatewayRGB_PATTERN_GREEN' => 'зелен|зелён|зелёный',
+ 'SXiGatewayRGB_PATTERN_YELLOW' => 'желт|жёлт|жёлтый',
+ 'SXiGatewayRGB_PATTERN_ORANGE' => 'оранж|оранжевый',
+ 'SXiGatewayRGB_PATTERN_RED' => 'красн|красный'
 
 );
 

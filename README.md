@@ -1,4 +1,4 @@
-# majordomo-rgb-device
+# majordomo-rgbgt-device
 Simple Devices addon (Xiaomi Gateway RGB)
 
 
