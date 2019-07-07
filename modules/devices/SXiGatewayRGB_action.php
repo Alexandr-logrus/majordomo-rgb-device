@@ -58,7 +58,7 @@ if (isset($params['color'])) {
   $check = 1;
  }
 } else {
- $this->setProperty('color', '000000');
+ $this->callmethodSafe('turnOff');
 }
 
 if ($check) {
