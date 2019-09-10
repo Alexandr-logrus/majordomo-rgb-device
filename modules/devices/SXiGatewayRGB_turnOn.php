@@ -3,7 +3,7 @@
 $colorSaved = $this->getProperty('colorSaved');
 $brightnessHex = dechex($this->getProperty('brightnessSaved'));
 
-if (strlen($brightnessHex) == '1') {
+if (strlen($brightnessHex) == 1) {
  $brightnessHex = '0' . $brightnessHex;
 }
 

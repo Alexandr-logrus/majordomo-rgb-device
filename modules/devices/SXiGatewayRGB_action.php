@@ -4,7 +4,22 @@ $ot = $params['ORIGINAL_OBJECT_TITLE'];
 $action = $this->getProperty('actionRGB');
 
 if (isset($params['color'])) {
- $this->callMethod('setColor', array('color'=> $params['color']));
+ //$this->callMethod('setColor', array('color'=> $params['color']));
+
+ if (isset($params['brightness'])) {
+  $brightnessHex = dechex($params['brightness']);
+  if (strlen($brightnessHex) == '1') {
+   $brightnessHex = '0' . $brightnessHex;
+  }
+  $this->setProperty('color', $brightnessHex . $params['color']);
+ } else {
+  $brightnessHex = dechex($this->getProperty('brightnessSaved'));//тодо
+  if (strlen($brightnessHex) == '1') {
+   $brightnessHex = '0' . $brightnessHex;
+  }
+  $this->setProperty('color', $brightnessHex . $params['color']);
+ }
+
  if (isset($params['timer'])) {
   setTimeout($ot . '_timerAction', 'callMethod("' . $ot . '.action");', $params['timer']);
  }
