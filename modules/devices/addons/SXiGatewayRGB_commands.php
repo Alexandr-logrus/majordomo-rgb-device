@@ -30,8 +30,7 @@ if ($device_type == 'rgbgt') {
   );
   foreach($colors as $color_code => $color_words) {
    if(preg_match('/' . $color_words . '/uis', $command)) {
-    //$run_code .= "setGlobal('$linked_object.color', $color_code);";
-    $run_code .= "callMethod('$linked_object.setColor', array('color'=> '$color_code'));";
+    $run_code .= "callMethod('$linked_object.action', array('color'=> '$color_code'));";
     $processed = 1;
     $reply_confirm = 1;
     break;
@@ -40,7 +39,7 @@ if ($device_type == 'rgbgt') {
  }
  elseif (preg_match('/' . LANG_SXiGatewayRGB_PATTERN_BRIGHTNESS . '/uis', $command)) {
   if(preg_match('/(?:\s)(\d{1,2}|100)(?:%|\s|$)/uis', $command, $matches)) {
-   $run_code .= "setGlobal('$linked_object.brightness', $matches[1]);";
+   $run_code .= "callMethod('$linked_object.action', array('brightness'=> '$matches[1]'));";
    $processed = 1;
    $reply_confirm = 1;
   }
