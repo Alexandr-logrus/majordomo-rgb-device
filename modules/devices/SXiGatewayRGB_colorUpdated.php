@@ -1,8 +1,8 @@
 <?php
 
-if ($params['NEW_VALUE'] == $params['OLD_VALUE']) return;
+if ($params['NEW_VALUE'] == $params['OLD_VALUE'] || strlen($params['NEW_VALUE']) > 6) return;
 
-if ($params['NEW_VALUE'] != '000000') {
+if ($params['NEW_VALUE'] != '000000' && $this->getProperty('brightness')) {
  $this->setProperty('colorSaved', $params['NEW_VALUE']);
  $this->setProperty('status', 1);
 } else {

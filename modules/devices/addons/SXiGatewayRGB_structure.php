@@ -10,7 +10,7 @@ $this->device_types['rgbgt'] = array(
         'colorSleep'=>array('DESCRIPTION'=>'Цвет при спят','_CONFIG_TYPE'=>'num'),
         'colorAtHome'=>array('DESCRIPTION'=>'Цвет при кто-то дома','_CONFIG_TYPE'=>'num'),
 
-        'brightness'=>array('DESCRIPTION'=>'Current brightness','DATA_KEY'=>1),
+        'brightness'=>array('DESCRIPTION'=>'Current brightness','ONCHANGE'=>'brightnessUpdated','DATA_KEY'=>1),
         'brightnessSaved'=>array('DESCRIPTION'=>'Saved brightness'),
         'brightnessSleep'=>array('DESCRIPTION'=>'Яркость при спят','_CONFIG_TYPE'=>'num'),
         'brightnessDark'=>array('DESCRIPTION'=>'Яркость когда темно','_CONFIG_TYPE'=>'num'),
@@ -19,6 +19,7 @@ $this->device_types['rgbgt'] = array(
         'actionRGB'=>array('DESCRIPTION'=>'Управлять цветом и яркостью из режимов','_CONFIG_TYPE'=>'yesno','ONCHANGE'=>'action')
     ),
     'METHODS'=>array(
+        'brightnessUpdated'=>array('DESCRIPTION'=>'Brightness Updated'),
         'colorUpdated'=>array('DESCRIPTION'=>'Color Updated'),
         'action'=>array('DESCRIPTION'=>'Action'),
         'turnOn'=>array('DESCRIPTION'=>'RGB turnOn'),
