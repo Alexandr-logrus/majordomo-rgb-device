@@ -6,7 +6,7 @@ $action = $this->getProperty('actionRGB');
 if (isset($params['color']) || isset($params['brightness'])) {
 
  if (isset($params['color'])) {
-  $color = $params['color'];
+  $color = preg_replace('/^#/','', $params['color']);
  } else {
   $color = $this->getProperty('colorSaved');
  }
