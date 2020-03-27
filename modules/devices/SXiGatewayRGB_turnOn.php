@@ -1,5 +1,4 @@
 <?php
-
 if ($this->getProperty('brightnessSaved') == 0) {
  $brightness = 100;
 } else {

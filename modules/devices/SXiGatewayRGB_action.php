@@ -1,5 +1,4 @@
 <?php
-
 $ot = $params['ORIGINAL_OBJECT_TITLE'];
 $action = $this->getProperty('actionRGB');
 

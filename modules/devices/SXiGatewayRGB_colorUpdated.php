@@ -1,5 +1,4 @@
 <?php
-
 if ($params['NEW_VALUE'] == $params['OLD_VALUE'] || strlen($params['NEW_VALUE']) > 6) return;
 
 if ($params['NEW_VALUE'] != '000000' && $this->getProperty('brightness')) {
