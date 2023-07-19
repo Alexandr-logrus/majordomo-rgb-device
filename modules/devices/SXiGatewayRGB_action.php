@@ -85,11 +85,15 @@ if (isset($params['color']) || isset($params['brightness'])) {
  $this->callmethod('turnOff');
 }
 
-if ($check) {
+if ($check && $params['step'] < 6) {
  $brightnessHex = dechex($brightness);
  if (strlen($brightnessHex) == '1') {
   $brightnessHex = '0' . $brightnessHex;
  }
  $this->setProperty('color', $brightnessHex . $color);
- setTimeout($ot . '_timerCheck', 'callMethod("' . $ot . '.action");', 5);
+ $step = $params['step'] + 1;
+ $command = "callMethod('$ot.action', array('step'=>$step));";
+ setTimeOut($ot . '_timerCheck', $command, 5);
+} elseif ($params['step'] == 6) {
+ DebMes('Неудачных попыток - ' . $params['step'], $ot);
 }

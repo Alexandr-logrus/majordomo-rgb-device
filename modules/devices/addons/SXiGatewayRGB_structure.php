@@ -1,5 +1,11 @@
 <?php
 
+if (SETTINGS_SITE_LANGUAGE && file_exists(ROOT . 'languages/SXiGatewayRGB_' . SETTINGS_SITE_LANGUAGE . '.php')) {
+ include_once(ROOT . 'languages/SXiGatewayRGB_' . SETTINGS_SITE_LANGUAGE . '.php');
+} else {
+ include_once(ROOT . 'languages/SXiGatewayRGB_default.php');//
+}
+
 $this->device_types['rgbgt'] = array(
     'TITLE'=>'XiGateway',
     'PARENT_CLASS'=>'SControllers',
@@ -33,6 +39,3 @@ $this->device_types['rgbgt'] = array(
             'DarknessMode.modeChanged'=>'SXiGatewayRGB_injects')
     )
 );
-
-@include_once(ROOT . 'languages/SXiGatewayRGB_' . SETTINGS_SITE_LANGUAGE . '.php');
-@include_once(ROOT . 'languages/SXiGatewayRGB_default' . '.php');

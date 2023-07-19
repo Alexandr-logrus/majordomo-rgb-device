@@ -3,6 +3,7 @@
 
 <div class="device-widget mini controller" onClick='callMethod("%.object_title%.switch");'>
     <div class="device-icon %.status|"off;on"%" style='%.icon|"background-image:url(%.icon%)"%'></div>
+</div>
 <div class="device-header"><span>%.object_description%</span>
     <input type="text" id="color%.object_id%" class="colorpicker" value="%.color%" onChange='callMethod("%.object_title%.action","color="+encodeURIComponent(this.value));'/>
 </div>
@@ -14,4 +15,3 @@
         cancelText: "<#LANG_CANCEL#>"
     });
 </script>
-</div>
